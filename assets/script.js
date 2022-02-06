@@ -1,8 +1,8 @@
 const price1 = 15.00
 const price2 = 17.50
 
-let quantity1 = 1 // have to have one to start
-let quantity2 = 1 // have to have one to start
+let quantity1 = 1 
+let quantity2 = 1 
 
 const btnQuantityDown1 = document.querySelector('#quantity-down1');
 const btnQuantityUp1 = document.querySelector('#quantity-up1');
