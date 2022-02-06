@@ -21,7 +21,6 @@ btnQuantityDown1.addEventListener('click', function(e)
 {
     if (quantity1 > 0) {
         quantity1 -= 1;
-        console.log(quantity1);
         updateQuantity1();
     }
     updateTotal();
@@ -30,18 +29,17 @@ btnQuantityDown1.addEventListener('click', function(e)
 btnQuantityUp1.addEventListener('click', function(e)
 {
     quantity1 += 1;
-    console.log(quantity1);
     updateQuantity1();
     updateTotal();
 });
 
 btnRemove1.addEventListener('click', function(e){
    const cartItem1 = document.querySelector('#cartItem1');
-   console.log(cartItem1);
    if (cartItem1 != null)
    {
       quantity1 = 0;
       cartItem1.remove();
+      updateTotal();
    }
 });
 
@@ -49,7 +47,6 @@ btnQuantityDown2.addEventListener('click', function(e)
 {
     if (quantity2 > 0) {
       quantity2 -= 1;
-        console.log(quantity2);
         updateQuantity2();
     }
     updateTotal();
@@ -58,18 +55,17 @@ btnQuantityDown2.addEventListener('click', function(e)
 btnQuantityUp2.addEventListener('click', function(e)
 {
     quantity2 += 1;
-    console.log(quantity1);
     updateQuantity2();
     updateTotal();
 });
 
-btnRemove1.addEventListener('click', function(e){
+btnRemove2.addEventListener('click', function(e){
    const cartItem2 = document.querySelector('#cartItem2');
-   console.log(cartItem2);
    if (cartItem2 != null)
    {
       quantity2 = 0;
       cartItem2.remove();
+      updateTotal();
    }
 });
 
@@ -84,7 +80,7 @@ function updateTotal()
 {
    h2TotalItems.textContent = `Total items: ${quantity1 + quantity2}`
    h2TotalPrice.textContent = `Total: $${((quantity1 * price1) + (quantity2 * price2)).toLocaleString(
-      undefined,
+      'en-US',
       {  minimumFractionDigits: 2 }
       )}`
    
